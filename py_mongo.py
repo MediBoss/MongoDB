@@ -3,8 +3,13 @@ import sys
 from pymongo import MongoClient
 from pprint import pprint
 
-client = MongoClient(<MONGODB URL>)
-db = client.admin
+# Connecting to MongoDB host and port 
+client = MongoClient('mongodb://localhost:27017/')
+db = client.MakeSchool
+collections = db.students
 
-serverStatusResults = db.command("serverStatus")
-pprint(serverStatus)
+
+
+pprint("MONGODB - A collection oriented database")
+print"Collections : {}".format(db.command(collections))
+
